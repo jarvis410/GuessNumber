@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Guess A Number</string>
+    <string name="about_author">About Author</string>
+    <string name="instructions">Instructions</string>
+    <string name="select_difficulty">Select Difficulty</string>
+    <string name="take_a_guess_hint">Take a Guess</string>
+    <string name="strClose">Close</string>
+
+    <string name="start_game">Start Game</string>
+    <string name="guess">Guess</string>
+    <string name="quit">Quit</string>
+    <string name="play_again">Play Again</string>
+    <string name="back_to_home">Back to Home</string>
+
+    <string name="theme_dark">Dark</string>
+    <string name="theme_light">Light</string>
+
+    <string name="instructions_game">I am thinking of a number between 1 and 20</string>
+    <string name="instructions_home">As per the selection of difficulty level, you have to guess a number with limited tries and between given range.</string>
+    <string name="about_author_txt">I am a software developer. Exploring Android Development, I created this simple game. Just a baby step in Android Development.</string>
+
+    <string name="answer_hint">Your guess is %1$s than secret number</string>
+    <string name="invalid_input">Secret Number is between 1 and 20</string>
+    <string name="display_difficulty">Difficulty: %1$s</string>
+    <string name="display_total_guesses">Total Guesses: %1$d</string>
+    <string name="display_guesses_left">Guesses left: %1$d</string>
+
+    <string name="result">Result</string>
+    <string name="result_win">Great Guess!</string>
+    <string name="result_lose">Oops! I was thinking of %1$d</string>
+    <string name="settings">Settings</string>
+</resources>
