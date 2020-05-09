@@ -29,4 +29,5 @@
     <string name="result_win">Great Guess!</string>
     <string name="result_lose">Oops! I was thinking of %1$d</string>
     <string name="settings">Settings</string>
+    <string name="splash_logo">Splash Logo</string>
 </resources>
