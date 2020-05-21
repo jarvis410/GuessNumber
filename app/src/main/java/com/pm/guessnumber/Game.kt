@@ -1,4 +1,4 @@
-package com.example.guessnumber
+package com.pm.guessnumber
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -52,37 +52,60 @@ class Game : AppCompatActivity() {
         }
 
         submit.setOnClickListener {
-            checkAnswer()
+            submitAnswer()
         }
     }
 
-    private fun checkAnswer() {
-        val answer = txtAnswer.text.toString().toInt()
+    private fun submitAnswer() {
+        evaluateAnswer()
+    }
 
-        if (answer !in 1..20) {
-            showToast(getString(R.string.invalid_input))
-            txtAnswer.text.clear()
-            return
-        }
-
-        if (answer == secretNumber) {
-            win()
-        } else {
-            showHint(answer)
-            if (++guess == totalGuesses) {
+    private fun evaluateAnswer() {
+        when (isValidAnswer()) {
+            false -> if (++guess == totalGuesses) {
                 lose()
             } else {
-                txtAnswer.text.clear()
+                setGuessLeft()
+            }
+            true -> when (checkAnswer()) {
+                true -> win()
+                false -> if (++guess == totalGuesses) {
+                    lose()
+                } else {
+                    showHint()
+                    setGuessLeft()
+                }
             }
         }
-        setGuessLeft()
+    }
+
+    private fun isValidAnswer(): Boolean {
+        val answerStr = txtAnswer.text.toString()
+
+        if (answerStr == "") {
+            showToast(getString(R.string.empty_input))
+            return false;
+        } else if (answerStr.toInt() !in 1..20) {
+            showToast(getString(R.string.invalid_input))
+            txtAnswer.text.clear()
+            return false
+        }
+        return true
+    }
+
+    private fun checkAnswer(): Boolean {
+        val answer = txtAnswer.text.toString().toInt()
+
+        return answer == secretNumber
     }
 
     private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-    private fun showHint(answer: Int) {
+    private fun showHint() {
+        val answer = txtAnswer.text.toString().toInt()
+
         val message: String = if (answer < secretNumber) {
             getString(R.string.answer_hint, "less")
         } else {
@@ -117,7 +140,5 @@ class Game : AppCompatActivity() {
         guessCount.text = getString(R.string.display_total_guesses, totalGuesses)
     }
 
-    override fun onBackPressed() {
-
-    }
+    override fun onBackPressed() { }
 }

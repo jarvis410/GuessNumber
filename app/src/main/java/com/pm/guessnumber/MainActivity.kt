@@ -1,7 +1,6 @@
-package com.example.guessnumber
+package com.pm.guessnumber
 
 import android.annotation.SuppressLint
-import android.content.DialogInterface.OnShowListener
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle

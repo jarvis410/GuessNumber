@@ -1,4 +1,4 @@
-package com.example.guessnumber
+package com.pm.guessnumber
 
 import android.content.Intent
 import android.os.Bundle

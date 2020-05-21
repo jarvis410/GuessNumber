@@ -20,6 +20,7 @@
     <string name="about_author_txt">I am a software developer. Exploring Android Development, I created this simple game. Just a baby step in Android Development.</string>
 
     <string name="answer_hint">Your guess is %1$s than secret number</string>
+    <string name="empty_input">Don\'t waste your guess. It\'s limited. 😅</string>
     <string name="invalid_input">Secret Number is between 1 and 20</string>
     <string name="display_difficulty">Difficulty: %1$s</string>
     <string name="display_total_guesses">Total Guesses: %1$d</string>
